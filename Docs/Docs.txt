@@ -1,0 +1,7 @@
+print הדפס
+input קלוט
+int מספר_שלם
+double מספר
+bool שאלה
+str קטע
+len אורך
