@@ -2,15 +2,19 @@ import sys
 import os
 
 
+def read_file(file_name: str) -> None:
+    with open(file_name, "r") as f:
+        print(f.readlines())
+
+
+def file_exists(file_name: str) -> bool:
+    return os.path.exists(file_name) and file_name.endswith(".phe")
+
+
 def main():
     file_name: str = str(sys.argv[1])
-    print(file_name)
-    if os.path.exists(file_name):
-        print("exists")
-        with open(file_name, "r") as f:
-            print(f.readlines())
-    else:
-        print("error no such file")
+    if file_exists(file_name=file_name):
+        read_file(file_name=file_name)
     input()
 
 
